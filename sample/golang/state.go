@@ -1,0 +1,28 @@
+package main
+
+import (
+	"fmt"
+)
+
+const (
+	MOTOR_MODE_STOP   = 0
+	MOTOR_MODE_RUN    = 1
+	MOTOR_MODE_ERROR  = 2
+	MOTOR_EVENT_RESET = 3
+	MOTOR_EVENT_STOP  = 0
+	MOTOR_EVENT_RUN   = 1
+	MOTOR_EVENT_ERROR = 2
+)
+
+func main() {
+	StateMap := [4][3]int{
+		/*state                0:MOTOR_MODE_STOP, 1:MOTOR_MODE_RUN,  2:MOTOR_MODE_ERROR*/
+		/*event*/
+		/*0 MOTOR_EVENT_STOP */ {MOTOR_MODE_STOP, MOTOR_MODE_STOP, MOTOR_MODE_ERROR},
+		/*1 MOTOR_EVENT_RUN  */ {MOTOR_MODE_RUN, MOTOR_MODE_RUN, MOTOR_MODE_ERROR},
+		/*2 MOTOR_EVENT_ERROR*/ {MOTOR_MODE_ERROR, MOTOR_MODE_ERROR, MOTOR_MODE_ERROR},
+		/*3 MOTOR_EVENT_RESET*/ {3, 3, 3}}
+	for _, i := range StateMap {
+		fmt.Println(i)
+	}
+}
