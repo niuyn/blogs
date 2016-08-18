@@ -9,37 +9,40 @@
  */
 public class StopState extends MotorState {
 
-
 	@Override
 	public void motor_run() {
-		// TODO Auto-generated method stub
+		getState();
+		System.out.println("电机遇到运行事件");
+		super.context.setCurrstate(Context.motor_run);
+		super.context.getCurrstate().motor_run();
 
 	}
-
 
 	@Override
 	public void motor_stop() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void motor_none() {
-		// TODO Auto-generated method stub
+		System.out.println("电机停止");
 
 	}
 
 	@Override
 	public void motor_reset() {
-		// TODO Auto-generated method stub
+		getState();
+		System.out.println("电机遇到重置事件");
+		super.context.setCurrstate(Context.motor_stop);
+		super.context.getCurrstate().motor_stop();
 
 	}
 
-
 	@Override
 	public void motor_error() {
-		// TODO Auto-generated method stub
+		getState();
+		System.out.println("电机遇到出错事件");
+		super.context.setCurrstate(Context.motor_error);
+		super.context.getCurrstate().motor_error();
+	}
 
+	public void getState() {
+		System.out.println("此时电机处于stop状态");
 	}
 
 }

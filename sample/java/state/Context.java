@@ -22,31 +22,19 @@ public class Context {
 	}
 	//行为代理
 	public void motor_run() {
-		// TODO Auto-generated method stub
 		this.currstate.motor_run();
 
 	}
-
 	public void motor_stop() {
-		// TODO Auto-generated method stub
-
-	}
-
-	public void motor_none() {
-		// TODO Auto-generated method stub
-
+		this.currstate.motor_stop();
 	}
 
 	public void motor_reset() {
-		// TODO Auto-generated method stub
-
+		this.currstate.motor_reset();
 	}
-
-
 	
 	public void motor_error() {
-		// TODO Auto-generated method stub
-
+		this.currstate.motor_error();
 	}
 	
 }

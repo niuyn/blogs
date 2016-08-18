@@ -13,10 +13,13 @@ public abstract class MotorState {
 	public void setContext(Context _context){
 		this.context=_context;
 	}
+	//电机运行事件
 	public abstract void motor_run();
+	//电机停止事件
 	public abstract void motor_stop();
-	public abstract void motor_none();
+	//电机重置事件
 	public abstract void motor_reset();
+	//电机出错事件
 	public abstract void motor_error();
 
 }
